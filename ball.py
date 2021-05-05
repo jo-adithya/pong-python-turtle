@@ -8,8 +8,14 @@ class Ball(Turtle):
         self.color('white')
         self.setpos(0, 0)
         self.penup()
+        self.direction = [10, 10]
+        self.x_size = 10
+        self.y_size = 10
 
     def move(self):
-        x = self.xcor() + 20
-        y = self.ycor() + 15
+        y = self.ycor() + self.direction[1]
+        x = self.xcor() + self.direction[0]
         self.setpos(x, y)
+
+    def bounce(self, index):
+        self.direction[index] *= -1
