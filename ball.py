@@ -9,8 +9,6 @@ class Ball(Turtle):
         self.setpos(0, 0)
         self.penup()
         self.direction = [10, 10]
-        self.x_size = 10
-        self.y_size = 10
 
     def move(self):
         y = self.ycor() + self.direction[1]
@@ -19,3 +17,7 @@ class Ball(Turtle):
 
     def bounce(self, index):
         self.direction[index] *= -1
+
+    def reset_pos(self):
+        self.setpos(0, 0)
+        self.bounce(0)
