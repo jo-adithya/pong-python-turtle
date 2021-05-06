@@ -8,6 +8,7 @@ class Ball(Turtle):
         self.color('white')
         self.setpos(0, 0)
         self.penup()
+        self.delay = .1
         self.direction = [10, 10]
 
     def move(self):
@@ -19,5 +20,6 @@ class Ball(Turtle):
         self.direction[index] *= -1
 
     def reset_pos(self):
+        self.delay = .1
         self.setpos(0, 0)
         self.bounce(0)
